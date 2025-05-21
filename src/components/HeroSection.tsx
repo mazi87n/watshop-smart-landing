@@ -6,10 +6,10 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 mb-10 md:mb-0 order-2 md:order-1">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 rtl text-ejabef-darkBlue leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-extrabold mb-4 rtl text-ejabef-darkBlue leading-tight md:text-4xl">
               خلك ذكي.. <br />وخلي الواتساب يبيع عنك!
             </h1>
-            <p className="text-xl md:text-2xl mb-8 rtl text-gray-700">
+            <p className="text-xl mb-8 rtl text-gray-700 md:text-2xl">
               حوّل محادثاتك إلى مبيعات تلقائية على مدار الساعة – عبر نظام ذكي يرد ويبيع بدون تدخل منك.
             </p>
             <div className="flex rtl gap-4">
@@ -35,8 +35,8 @@ const HeroSection: React.FC = () => {
           </div>
           <div className="md:w-1/2 order-1 md:order-2">
             <div className="relative">
-              <div className="absolute -top-6 -right-6 w-full h-full bg-ejabef-green rounded-2xl"></div>
-              <img alt="نظام إيجايف الذكي للواتساب" src="/lovable-uploads/81ad2f8c-e671-45ca-9a0c-58a3afa1c59b.png" className="relative z-10 rounded-2xl shadow-xl card-shadow object-scale-down" />
+              <div className="absolute -top-6 -right-6 w-full h-full bg-ejabef-green rounded-xl"></div>
+              <img alt="نظام إيجايف الذكي للواتساب" src="/lovable-uploads/81ad2f8c-e671-45ca-9a0c-58a3afa1c59b.png" className="relative z-10 rounded-2xl shadow-xl card-shadow object-contain" />
               <div className="absolute -top-3 -left-3 bg-ejabef-lightGreen p-3 rounded-lg shadow-lg z-20 rtl">
                 <p className="text-ejabef-darkBlue font-bold">يعمل 24/7 بدون تدخل منك!</p>
               </div>
