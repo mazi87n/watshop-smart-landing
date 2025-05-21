@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageSquare, Smartphone, ChevronLeft, ChevronRight, GalleryHorizontal } from 'lucide-react';
+import { MessageSquare, Smartphone, GalleryHorizontal } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { 
   Carousel, 
@@ -10,7 +10,6 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from '@/components/ui/carousel';
-import { Slider } from '@/components/ui/slider';
 
 const HeroSection: React.FC = () => {
   const {
@@ -41,7 +40,7 @@ const HeroSection: React.FC = () => {
             <p className={`text-xl mb-8 text-gray-700 md:text-2xl ${isRTL ? 'rtl' : ''}`}>
               {t('hero.subtitle')}
             </p>
-            <div className={`flex gap-4 ${isRTL ? 'rtl' : ''}`}>
+            <div className={`flex gap-4 ${isRTL ? 'rtl justify-end' : ''}`}>
               <Button className="cta-button animate-pulse-scale flex items-center gap-2" onClick={() => {
               const ctaSection = document.getElementById('cta');
               if (ctaSection) ctaSection.scrollIntoView({
@@ -71,8 +70,11 @@ const HeroSection: React.FC = () => {
 
               {/* Image carousel */}
               <div className="relative z-10 rounded-2xl shadow-xl card-shadow overflow-hidden">
-                <Carousel className="w-full" autoPlay={true} opts={{ loop: true }}>
-                  <CarouselContent>
+                <Carousel className="w-full" autoPlay={true} opts={{ 
+                  loop: true,
+                  direction: isRTL ? 'rtl' : 'ltr'
+                }}>
+                  <CarouselContent className={isRTL ? 'flex-row-reverse' : ''}>
                     {whatsappImages.map((image, index) => (
                       <CarouselItem key={index}>
                         <div className="p-1">
@@ -87,8 +89,8 @@ const HeroSection: React.FC = () => {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className={`-left-4 bg-white text-ejabef-darkBlue border-ejabef-green hover:bg-ejabef-lightGreen`} />
-                  <CarouselNext className={`-right-4 bg-white text-ejabef-darkBlue border-ejabef-green hover:bg-ejabef-lightGreen`} />
+                  <CarouselPrevious className={`${isRTL ? '-right-4' : '-left-4'} bg-white text-ejabef-darkBlue border-ejabef-green hover:bg-ejabef-lightGreen`} />
+                  <CarouselNext className={`${isRTL ? '-left-4' : '-right-4'} bg-white text-ejabef-darkBlue border-ejabef-green hover:bg-ejabef-lightGreen`} />
                 </Carousel>
               </div>
 

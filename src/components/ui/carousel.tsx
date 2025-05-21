@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
@@ -60,6 +61,8 @@ const Carousel = React.forwardRef<
     },
     ref
   ) => {
+    // Important: Move the useEmblaCarousel call inside the component function
+    // This ensures hooks are always called in the same order
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
