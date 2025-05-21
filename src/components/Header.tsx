@@ -12,21 +12,25 @@ const Header: React.FC = () => {
     setLanguage(language === 'ar' ? 'en' : 'ar');
   };
 
+  const isRTL = dir() === 'rtl';
+
   return (
     <header className="py-4 w-full">
-      <div className={`container mx-auto flex justify-between items-center ${dir() === 'rtl' ? '' : 'flex-row-reverse'}`}>
+      <div className={`container mx-auto flex justify-between items-center ${isRTL ? 'flex-row' : 'flex-row-reverse'}`}>
+        {/* Logo and title */}
         <div className="flex items-center gap-3">
           <img 
-            alt="إيجايف" 
+            alt={isRTL ? "إيجايف" : "Ejabef"} 
             className="h-12" 
             src="/lovable-uploads/53326a96-a9a2-4e07-a12b-9e01542ad092.png" 
           />
           <h1 className="text-2xl font-bold text-ejabef-darkBlue hidden md:block">
-            إيجايف - واتس مارت
+            {isRTL ? "إيجايف - واتس مارت" : "Ejabef - WhatsApp Smart"}
           </h1>
         </div>
         
-        <nav className={`hidden md:flex items-center space-x-4 ${dir()}`}>
+        {/* Navigation */}
+        <nav className={`hidden md:flex items-center ${isRTL ? 'space-x-4 space-x-reverse' : 'space-x-4'}`}>
           <a href="#features" className="text-gray-700 hover:text-ejabef-darkBlue transition">
             {t('header.features')}
           </a>
@@ -38,7 +42,8 @@ const Header: React.FC = () => {
           </a>
         </nav>
         
-        <div className="flex items-center gap-2">
+        {/* Action buttons */}
+        <div className={`flex items-center gap-2 ${isRTL ? '' : 'flex-row-reverse'}`}>
           <Button 
             variant="outline"
             className="language-switch flex items-center gap-1"
