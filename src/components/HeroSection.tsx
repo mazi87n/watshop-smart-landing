@@ -29,9 +29,9 @@ const HeroSection: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-hero-gradient overflow-hidden">
       <div className="container mx-auto">
-        <div className={`flex flex-col ${isRTL ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between`}>
+        <div className={`flex flex-col ${isRTL ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-8`}>
           {/* Content section (always on correct side based on language) */}
-          <div className={`md:w-1/2 mb-10 md:mb-0 order-2 ${isRTL ? 'md:order-1 text-right' : 'md:order-2 text-left'}`}>
+          <div className={`md:w-1/2 mb-10 md:mb-0 ${isRTL ? 'md:order-1 text-right' : 'md:order-2 text-left'}`}>
             <h1 className={`text-4xl lg:text-5xl font-extrabold mb-4 text-ejabef-darkBlue leading-tight ${isRTL ? 'rtl' : ''}`}>
               {t('hero.title')}
             </h1>
@@ -67,13 +67,13 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Image carousel section */}
-          <div className="md:w-1/2 order-1 md:order-2 relative">
+          {/* Image carousel section - with proper z-index and positioning */}
+          <div className="md:w-1/2 relative z-10">
             <div className="relative">
               {/* Background decorative elements */}
               <div className="absolute -top-6 -right-6 w-full h-full bg-ejabef-green rounded-xl"></div>
 
-              {/* Enhanced carousel with more images */}
+              {/* Enhanced carousel with more images and better configuration */}
               <Carousel 
                 className="w-full max-w-xl mx-auto" 
                 opts={{
@@ -102,7 +102,7 @@ const HeroSection: React.FC = () => {
               </Carousel>
 
               {/* Badge */}
-              <div className={`absolute -top-3 ${isRTL ? '-left-3' : '-right-3'} bg-ejabef-lightGreen p-3 rounded-lg shadow-lg z-20 ${isRTL ? 'rtl' : ''}`}>
+              <div className={`absolute -top-3 ${isRTL ? '-left-3' : '-right-3'} bg-ejabef-lightGreen p-3 rounded-lg shadow-lg z-20 transform translate-y-0 ${isRTL ? 'rtl' : ''}`}>
                 <p className="text-ejabef-darkBlue font-bold">{t('hero.badge')}</p>
               </div>
             </div>

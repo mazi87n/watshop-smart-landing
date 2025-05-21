@@ -106,12 +106,17 @@
   .rtl {
     direction: rtl;
   }
+  
+  /* Left-to-right direction for English text */
+  .ltr {
+    direction: ltr;
+  }
 }
 
 /* Custom styles for the landing page */
 @layer components {
   .feature-item {
-    @apply flex items-center gap-3 mb-4 rtl;
+    @apply flex items-center gap-3 mb-4;
   }
   
   .cta-button {
@@ -119,10 +124,29 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 rtl text-center;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center;
   }
   
   .card-shadow {
     @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  /* Animation for pulse scale used in CTA buttons */
+  @keyframes pulse-scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .animate-pulse-scale {
+    animation: pulse-scale 2s infinite;
+  }
+  
+  /* Add styles for language switch animation */
+  .language-switch {
+    @apply transition-all duration-300 transform hover:scale-105;
   }
 }
