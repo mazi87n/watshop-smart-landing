@@ -14,14 +14,18 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const HeroSection: React.FC = () => {
   const { t, dir } = useLanguage();
   
-  // Expanded array of hero images
+  // Expanded array of hero images with more images
   const heroImages = [
     "/lovable-uploads/81ad2f8c-e671-45ca-9a0c-58a3afa1c59b.png",
     "/lovable-uploads/7a0c30a5-c809-4bad-8e3b-0f23d4ad2563.png",
     "/lovable-uploads/777d9369-97a5-47a7-a002-61621246df19.png",
     "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=600",
     "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=600",
-    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&h=600"
+    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&h=600",
+    "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800&h=600"
   ];
 
   const isRTL = dir() === 'rtl';
