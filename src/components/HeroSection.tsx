@@ -1,17 +1,31 @@
-import React from 'react';
+
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageSquare, Smartphone } from 'lucide-react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { MessageSquare, Smartphone, Play, Pause } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+
 const HeroSection: React.FC = () => {
   const {
     t,
     dir
   } = useLanguage();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
 
-  // Expanded array of hero images with more images
-  const heroImages = ["/lovable-uploads/81ad2f8c-e671-45ca-9a0c-58a3afa1c59b.png", "/lovable-uploads/7a0c30a5-c809-4bad-8e3b-0f23d4ad2563.png", "/lovable-uploads/777d9369-97a5-47a7-a002-61621246df19.png", "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=600", "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&h=600", "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&h=600", "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&h=600", "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600", "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&h=600", "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800&h=600"];
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
   const isRTL = dir() === 'rtl';
+  
   return <section className="py-16 md:py-24 bg-hero-gradient overflow-hidden">
       <div className="container mx-auto">
         <div className={`flex flex-col ${isRTL ? 'md:flex-row' : 'md:flex-row-reverse'} items-center justify-between gap-8`}>
@@ -45,27 +59,37 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Image carousel section - with proper z-index and positioning */}
+          {/* Video section - replacing the carousel */}
           <div className="md:w-1/2 relative z-10">
             <div className="relative">
               {/* Background decorative elements */}
               <div className="absolute -top-6 -right-6 w-full h-full bg-ejabef-green rounded-xl"></div>
 
-              {/* Enhanced carousel with more images and better configuration */}
-              <Carousel className="w-full max-w-xl mx-auto" opts={{
-              align: "center",
-              loop: true,
-              inViewThreshold: 0.6,
-              skipSnaps: true
-            }} autoPlay={true} autoPlayInterval={4000}>
-                <CarouselContent>
-                  {heroImages.map((image, index) => <CarouselItem key={index} className="flex items-center justify-center">
-                      <img alt={`نظام إيجايف الذكي للواتساب ${index + 1}`} src={image} loading={index > 1 ? "lazy" : "eager"} className="relative z-10 rounded-2xl shadow-xl card-shadow h-[450px] w-full object-contain" />
-                    </CarouselItem>)}
-                </CarouselContent>
-                <CarouselPrevious className="relative z-20" />
-                <CarouselNext className="relative z-20" />
-              </Carousel>
+              {/* Video player */}
+              <div className="relative z-10 rounded-2xl shadow-xl card-shadow overflow-hidden">
+                <video 
+                  ref={videoRef}
+                  autoPlay
+                  muted
+                  loop
+                  className="w-full h-[450px] object-cover"
+                >
+                  <source src="https://player.vimeo.com/external/446766811.sd.mp4?s=f2553e9e2cff0b35378a1cf406449a14828e9634&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                
+                {/* Video controls */}
+                <div className="absolute bottom-4 right-4 flex gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="bg-white/80 hover:bg-white text-ejabef-darkBlue rounded-full"
+                    onClick={togglePlayPause}
+                  >
+                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                  </Button>
+                </div>
+              </div>
 
               {/* Badge */}
               <div className={`absolute -top-3 ${isRTL ? '-left-3' : '-right-3'} bg-ejabef-lightGreen p-3 rounded-lg shadow-lg z-20 transform translate-y-0 ${isRTL ? 'rtl' : ''}`}>
