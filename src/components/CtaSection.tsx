@@ -1,0 +1,103 @@
+
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
+
+const CtaSection: React.FC = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    businessName: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send this data to a server
+    console.log('Form data submitted:', formData);
+    
+    // Show success toast
+    toast({
+      title: "تم إرسال طلبك بنجاح!",
+      description: "سنتواصل معك قريباً لإتمام الطلب.",
+      variant: "default",
+    });
+    
+    // Reset form
+    setFormData({
+      name: '',
+      phone: '',
+      businessName: ''
+    });
+  };
+
+  return (
+    <section id="cta" className="py-16 bg-ejabef-green">
+      <div className="container mx-auto">
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 rtl">
+          <h2 className="section-title text-ejabef-darkBlue">اطلب الخدمة الآن</h2>
+          <p className="text-lg text-center mb-8">
+            قم بملء النموذج التالي وسيتواصل معك فريقنا خلال 24 ساعة لإتمام طلبك
+          </p>
+          
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="form-group">
+              <label htmlFor="name" className="block text-gray-700 mb-2">الاسم الكامل</label>
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="rtl"
+                placeholder="أدخل اسمك الكامل"
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="phone" className="block text-gray-700 mb-2">رقم الهاتف (واتساب)</label>
+              <Input
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="rtl"
+                placeholder="أدخل رقم الهاتف المستخدم على الواتساب"
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="businessName" className="block text-gray-700 mb-2">اسم المشروع/النشاط التجاري</label>
+              <Input
+                id="businessName"
+                name="businessName"
+                value={formData.businessName}
+                onChange={handleChange}
+                required
+                className="rtl"
+                placeholder="أدخل اسم مشروعك التجاري"
+              />
+            </div>
+            
+            <Button type="submit" className="cta-button w-full justify-center">
+              اطلب الخدمة الآن واحصل على العرض الخاص
+            </Button>
+          </form>
+          
+          <p className="mt-8 text-center text-gray-600 text-sm">
+            بالضغط على زر الطلب، أنت توافق على سياسة الخصوصية وشروط الاستخدام الخاصة بنا.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CtaSection;
