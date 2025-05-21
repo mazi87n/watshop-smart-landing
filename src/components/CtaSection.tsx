@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CtaSection: React.FC = () => {
   const { toast } = useToast();
+  const { t, dir } = useLanguage();
+  const isRTL = dir() === 'rtl';
+  
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -24,8 +28,8 @@ const CtaSection: React.FC = () => {
     
     // Show success toast
     toast({
-      title: "تم إرسال طلبك بنجاح!",
-      description: "سنتواصل معك قريباً لإتمام الطلب.",
+      title: t('cta.success'),
+      description: t('cta.successDesc'),
       variant: "default",
     });
     
@@ -40,59 +44,62 @@ const CtaSection: React.FC = () => {
   return (
     <section id="cta" className="py-16 bg-ejabef-green">
       <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 rtl">
-          <h2 className="section-title text-ejabef-darkBlue">اطلب الخدمة الآن</h2>
+        <div className={`max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 ${isRTL ? 'rtl' : ''}`}>
+          <h2 className="section-title text-ejabef-darkBlue">{t('cta.title')}</h2>
           <p className="text-lg text-center mb-8">
-            قم بملء النموذج التالي وسيتواصل معك فريقنا خلال 24 ساعة لإتمام طلبك
+            {t('cta.description')}
           </p>
           
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-group">
-              <label htmlFor="name" className="block text-gray-700 mb-2">الاسم الكامل</label>
+              <label htmlFor="name" className="block text-gray-700 mb-2">{t('cta.name')}</label>
               <Input
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="rtl"
-                placeholder="أدخل اسمك الكامل"
+                className={isRTL ? 'rtl' : ''}
+                placeholder={t('cta.namePlaceholder')}
+                dir={dir()}
               />
             </div>
             
             <div className="form-group">
-              <label htmlFor="phone" className="block text-gray-700 mb-2">رقم الهاتف (واتساب)</label>
+              <label htmlFor="phone" className="block text-gray-700 mb-2">{t('cta.phone')}</label>
               <Input
                 id="phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="rtl"
-                placeholder="أدخل رقم الهاتف المستخدم على الواتساب"
+                className={isRTL ? 'rtl' : ''}
+                placeholder={t('cta.phonePlaceholder')}
+                dir={dir()}
               />
             </div>
             
             <div className="form-group">
-              <label htmlFor="businessName" className="block text-gray-700 mb-2">اسم المشروع/النشاط التجاري</label>
+              <label htmlFor="businessName" className="block text-gray-700 mb-2">{t('cta.business')}</label>
               <Input
                 id="businessName"
                 name="businessName"
                 value={formData.businessName}
                 onChange={handleChange}
                 required
-                className="rtl"
-                placeholder="أدخل اسم مشروعك التجاري"
+                className={isRTL ? 'rtl' : ''}
+                placeholder={t('cta.businessPlaceholder')}
+                dir={dir()}
               />
             </div>
             
             <Button type="submit" className="cta-button w-full justify-center">
-              اطلب الخدمة الآن واحصل على العرض الخاص
+              {t('cta.button')}
             </Button>
           </form>
           
           <p className="mt-8 text-center text-gray-600 text-sm">
-            بالضغط على زر الطلب، أنت توافق على سياسة الخصوصية وشروط الاستخدام الخاصة بنا.
+            {t('cta.disclaimer')}
           </p>
         </div>
       </div>

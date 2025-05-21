@@ -2,8 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const OfferSection: React.FC = () => {
+  const { t, dir } = useLanguage();
+  const isRTL = dir() === 'rtl';
+  
   // Set countdown for 3 days from now
   const [timeLeft, setTimeLeft] = useState({
     days: 3,
@@ -59,37 +63,37 @@ const OfferSection: React.FC = () => {
   return (
     <section id="offer" className="py-16 bg-ejabef-lightGreen">
       <div className="container mx-auto">
-        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto rtl">
+        <div className={`bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto ${isRTL ? 'rtl' : ''}`}>
           <h2 className="section-title text-ejabef-darkBlue">
-            🎁 عرض خاص لأول 20 مشروع فقط
+            {t('offer.title')}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mt-8">
             <div className="space-y-4">
               <div className="feature-item">
                 <span className="text-ejabef-green text-2xl">✓</span>
-                <p className="text-lg">تهيئة النظام بالكامل مجانًا</p>
+                <p className="text-lg">{t('offer.feature1')}</p>
               </div>
               <div className="feature-item">
                 <span className="text-ejabef-green text-2xl">✓</span>
-                <p className="text-lg">إضافة كل منتجاتك داخل الكتالوج بدون تكلفة</p>
+                <p className="text-lg">{t('offer.feature2')}</p>
               </div>
               <div className="feature-item">
                 <span className="text-ejabef-green text-2xl">✓</span>
-                <p className="text-lg">خصم 25% على الاشتراك</p>
+                <p className="text-lg">{t('offer.feature3')}</p>
               </div>
               <div className="feature-item">
                 <span className="text-ejabef-green text-2xl">✓</span>
-                <p className="text-lg">السعر يثبت لك مدى الحياة</p>
+                <p className="text-lg">{t('offer.feature4')}</p>
               </div>
             </div>
             
             <div className="flex flex-col items-center justify-center bg-gray-50 p-6 rounded-xl">
-              <p className="text-xl font-bold text-ejabef-darkBlue mb-2">💸 ادفع فقط</p>
+              <p className="text-xl font-bold text-ejabef-darkBlue mb-2">{t('offer.payOnly')}</p>
               <div className="text-4xl md:text-5xl font-extrabold text-ejabef-green">
-                24 ر.ع
+                {t('offer.price')}
               </div>
-              <p className="text-lg text-gray-700 mt-2">وخلّي الواتساب يشتغل عنك 24/7</p>
+              <p className="text-lg text-gray-700 mt-2">{t('offer.description')}</p>
               
               <Button 
                 className="cta-button mt-6 w-full justify-center animate-pulse-scale"
@@ -98,36 +102,36 @@ const OfferSection: React.FC = () => {
                   if (ctaSection) ctaSection.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                اطلب الخدمة الآن
+                {t('offer.cta')}
               </Button>
             </div>
           </div>
           
           <div className="mt-10 border-t border-gray-200 pt-6">
             <p className="text-center text-xl font-bold text-red-500 mb-4">
-              🚨 لا تفوّت الفرصة – العرض حصري لأول 20 مشروع فقط!
+              {t('offer.warning')}
             </p>
             
-            <div className="countdown bg-gray-100 p-4 rounded-lg flex items-center justify-center max-w-md mx-auto">
-              <p className="text-lg font-bold ml-3 flex items-center">
-                <Clock className="mr-2" /> العرض ينتهي خلال:
+            <div className={`countdown bg-gray-100 p-4 rounded-lg flex items-center justify-center max-w-md mx-auto ${isRTL ? 'flex-row-reverse' : ''}`}>
+              <p className={`text-lg font-bold ${isRTL ? 'mr-3' : 'ml-3'} flex items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <Clock className={isRTL ? 'ml-2' : 'mr-2'} /> {t('offer.countdown')}
               </p>
               <div className="grid grid-cols-4 gap-2 text-center">
                 <div className="bg-ejabef-darkBlue text-white rounded p-2">
                   <div className="text-xl font-bold">{formatTime(timeLeft.days)}</div>
-                  <div className="text-xs">يوم</div>
+                  <div className="text-xs">{t('offer.days')}</div>
                 </div>
                 <div className="bg-ejabef-darkBlue text-white rounded p-2">
                   <div className="text-xl font-bold">{formatTime(timeLeft.hours)}</div>
-                  <div className="text-xs">ساعة</div>
+                  <div className="text-xs">{t('offer.hours')}</div>
                 </div>
                 <div className="bg-ejabef-darkBlue text-white rounded p-2">
                   <div className="text-xl font-bold">{formatTime(timeLeft.minutes)}</div>
-                  <div className="text-xs">دقيقة</div>
+                  <div className="text-xs">{t('offer.minutes')}</div>
                 </div>
                 <div className="bg-ejabef-darkBlue text-white rounded p-2">
                   <div className="text-xl font-bold">{formatTime(timeLeft.seconds)}</div>
-                  <div className="text-xs">ثانية</div>
+                  <div className="text-xs">{t('offer.seconds')}</div>
                 </div>
               </div>
             </div>
