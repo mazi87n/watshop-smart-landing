@@ -36,7 +36,7 @@ const HeroSection: React.FC = () => {
           <div className="md:w-1/2 order-1 md:order-2">
             <div className="relative">
               <div className="absolute -top-6 -right-6 w-full h-full bg-ejabef-green rounded-2xl"></div>
-              <img alt="نظام إيجايف الذكي للواتساب" className="relative z-10 rounded-2xl shadow-xl card-shadow" src="/lovable-uploads/81ad2f8c-e671-45ca-9a0c-58a3afa1c59b.png" />
+              <img alt="نظام إيجايف الذكي للواتساب" src="/lovable-uploads/81ad2f8c-e671-45ca-9a0c-58a3afa1c59b.png" className="relative z-10 rounded-2xl shadow-xl card-shadow object-scale-down" />
               <div className="absolute -top-3 -left-3 bg-ejabef-lightGreen p-3 rounded-lg shadow-lg z-20 rtl">
                 <p className="text-ejabef-darkBlue font-bold">يعمل 24/7 بدون تدخل منك!</p>
               </div>
