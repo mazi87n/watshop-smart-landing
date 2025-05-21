@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Loader2 } from 'lucide-react';
 
 const CtaSection: React.FC = () => {
   const { toast } = useToast();
@@ -16,29 +17,56 @@ const CtaSection: React.FC = () => {
     businessName: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send this data to a server
-    console.log('Form data submitted:', formData);
+    setIsSubmitting(true);
     
-    // Show success toast
-    toast({
-      title: t('cta.success'),
-      description: t('cta.successDesc'),
-      variant: "default",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      phone: '',
-      businessName: ''
-    });
+    try {
+      // This is a mock API endpoint - replace with your actual endpoint
+      const response = await fetch('https://api.example.com/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      // For demonstration - mock a successful response
+      // In production, check actual response status and data
+      console.log('Form data submitted:', formData);
+      
+      // Show success toast
+      toast({
+        title: t('cta.success'),
+        description: t('cta.successDesc'),
+        variant: "default",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        businessName: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      
+      // Show error toast
+      toast({
+        title: t('cta.error') || 'Error',
+        description: t('cta.errorDesc') || 'There was a problem submitting your request. Please try again.',
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,6 +90,7 @@ const CtaSection: React.FC = () => {
                 className={isRTL ? 'rtl' : ''}
                 placeholder={t('cta.namePlaceholder')}
                 dir={dir()}
+                disabled={isSubmitting}
               />
             </div>
             
@@ -76,6 +105,7 @@ const CtaSection: React.FC = () => {
                 className={isRTL ? 'rtl' : ''}
                 placeholder={t('cta.phonePlaceholder')}
                 dir={dir()}
+                disabled={isSubmitting}
               />
             </div>
             
@@ -90,11 +120,23 @@ const CtaSection: React.FC = () => {
                 className={isRTL ? 'rtl' : ''}
                 placeholder={t('cta.businessPlaceholder')}
                 dir={dir()}
+                disabled={isSubmitting}
               />
             </div>
             
-            <Button type="submit" className="cta-button w-full justify-center">
-              {t('cta.button')}
+            <Button 
+              type="submit" 
+              className="cta-button w-full justify-center" 
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t('cta.sending')}
+                </>
+              ) : (
+                t('cta.button')
+              )}
             </Button>
           </form>
           
