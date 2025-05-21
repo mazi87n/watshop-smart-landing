@@ -1,15 +1,8 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageSquare, Smartphone, GalleryHorizontal } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from '@/components/ui/carousel';
 
 const HeroSection: React.FC = () => {
   const {
@@ -17,7 +10,7 @@ const HeroSection: React.FC = () => {
     dir
   } = useLanguage();
 
-  // WhatsApp UI images for the slider
+  // WhatsApp UI images for the image transition
   const whatsappImages = [
     '/lovable-uploads/1b246895-7c6f-46b3-8b0c-e94da6aeb98d.png',
     '/lovable-uploads/e16e4953-90df-48ec-8417-2e4b90f5b6c4.png',
@@ -26,6 +19,26 @@ const HeroSection: React.FC = () => {
     '/lovable-uploads/cdb629c8-5e0d-4849-9bab-8aa4dc1d7c22.png',
     '/lovable-uploads/b9253321-3dd2-4930-b856-1855e51c278b.png'
   ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  // Effect to handle the image transition
+  useEffect(() => {
+    const transitionInterval = setInterval(() => {
+      // Start fade out
+      setIsVisible(false);
+      
+      // After fade out, change image and start fade in
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % whatsappImages.length);
+        setIsVisible(true);
+      }, 500); // Half second for fade out
+      
+    }, 3000); // Change image every 3 seconds
+    
+    return () => clearInterval(transitionInterval);
+  }, []);
 
   const isRTL = dir() === 'rtl';
   
@@ -62,36 +75,21 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Image carousel section - replacing the video */}
+          {/* Image transition section - replacing the carousel */}
           <div className="md:w-1/2 relative z-10">
             <div className="relative">
               {/* Background decorative elements */}
               <div className="absolute -top-6 -right-6 w-full h-full bg-ejabef-green rounded-xl"></div>
 
-              {/* Image carousel */}
+              {/* Fade transition image container */}
               <div className="relative z-10 rounded-2xl shadow-xl card-shadow overflow-hidden">
-                <Carousel className="w-full" autoPlay={true} opts={{ 
-                  loop: true,
-                  direction: isRTL ? 'rtl' : 'ltr'
-                }}>
-                  <CarouselContent className={isRTL ? 'flex-row-reverse' : ''}>
-                    {whatsappImages.map((image, index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <div className="bg-black rounded-xl overflow-hidden flex items-center justify-center h-[450px]">
-                            <img 
-                              src={image} 
-                              alt={`WhatsApp Shopping UI ${index + 1}`}
-                              className="h-full object-contain"
-                            />
-                          </div>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className={`${isRTL ? '-right-4' : '-left-4'} bg-white text-ejabef-darkBlue border-ejabef-green hover:bg-ejabef-lightGreen`} />
-                  <CarouselNext className={`${isRTL ? '-left-4' : '-right-4'} bg-white text-ejabef-darkBlue border-ejabef-green hover:bg-ejabef-lightGreen`} />
-                </Carousel>
+                <div className="bg-black rounded-xl overflow-hidden flex items-center justify-center h-[450px]">
+                  <img 
+                    src={whatsappImages[currentImageIndex]} 
+                    alt={`WhatsApp Shopping UI ${currentImageIndex + 1}`}
+                    className={`h-full object-contain transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                  />
+                </div>
               </div>
 
               {/* Badge */}
