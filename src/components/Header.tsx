@@ -16,9 +16,9 @@ const Header: React.FC = () => {
 
   return (
     <header className="py-4 w-full">
-      <div className={`container mx-auto flex justify-between items-center ${isRTL ? 'flex-row' : 'flex-row-reverse'}`}>
-        {/* Logo and title */}
-        <div className="flex items-center gap-3">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Logo and title - position based on language direction */}
+        <div className={`flex items-center gap-3 ${isRTL ? 'order-1' : 'order-1'}`}>
           <img 
             alt={isRTL ? "إيجايف" : "Ejabef"} 
             className="h-12" 
@@ -29,8 +29,8 @@ const Header: React.FC = () => {
           </h1>
         </div>
         
-        {/* Navigation */}
-        <nav className={`hidden md:flex items-center ${isRTL ? 'space-x-4 space-x-reverse' : 'space-x-4'}`}>
+        {/* Navigation - center */}
+        <nav className={`hidden md:flex items-center ${isRTL ? 'space-x-4 space-x-reverse order-2' : 'space-x-4 order-2'}`}>
           <a href="#features" className="text-gray-700 hover:text-ejabef-darkBlue transition">
             {t('header.features')}
           </a>
@@ -42,8 +42,8 @@ const Header: React.FC = () => {
           </a>
         </nav>
         
-        {/* Action buttons */}
-        <div className={`flex items-center gap-2 ${isRTL ? '' : 'flex-row-reverse'}`}>
+        {/* Action buttons - position based on language direction */}
+        <div className={`flex items-center gap-2 ${isRTL ? 'order-3' : 'order-3'}`}>
           <Button 
             variant="outline"
             className="language-switch flex items-center gap-1"
