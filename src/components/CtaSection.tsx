@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const CtaSection: React.FC = () => {
   const { toast } = useToast();
@@ -29,18 +30,30 @@ const CtaSection: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // This is a mock API endpoint - replace with your actual endpoint
-      const response = await fetch('https://api.example.com/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // EmailJS configuration - Replace these with your actual EmailJS credentials
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
       
-      // For demonstration - mock a successful response
-      // In production, check actual response status and data
-      console.log('Form data submitted:', formData);
+      // Prepare template parameters
+      const templateParams = {
+        to_email: 'talal@egaief.com',
+        from_name: formData.name,
+        phone: formData.phone,
+        business_name: formData.businessName,
+        message: `New contact form submission:
+        
+Name: ${formData.name}
+Phone: ${formData.phone}
+Business: ${formData.businessName}
+        
+This message was sent from the Ejabef website contact form.`,
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      console.log('Email sent successfully');
       
       // Show success toast
       toast({
@@ -56,7 +69,7 @@ const CtaSection: React.FC = () => {
         businessName: ''
       });
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error sending email:', error);
       
       // Show error toast
       toast({
