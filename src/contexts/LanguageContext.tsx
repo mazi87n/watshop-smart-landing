@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define our languages and translation type
@@ -318,16 +317,16 @@ const translations: Translations = {
     en: 'Contact Us',
   },
   'footer.email': {
-    ar: 'البريد الإلكتروني: info@ejabef.com',
-    en: 'Email: info@ejabef.com',
+    ar: 'البريد الإلكتروني: talal@egaief.com',
+    en: 'Email: talal@egaief.com',
   },
   'footer.phone': {
-    ar: 'الهاتف: +968 1234 5678',
-    en: 'Phone: +968 1234 5678',
+    ar: 'الهاتف: +96894496999',
+    en: 'Phone: +96894496999',
   },
   'footer.whatsapp': {
-    ar: 'واتساب: +968 9876 5432',
-    en: 'WhatsApp: +968 9876 5432',
+    ar: 'واتساب: +96894496999',
+    en: 'WhatsApp: +96894496999',
   },
   'footer.copyright': {
     ar: 'جميع الحقوق محفوظة &copy; إيجايف',
