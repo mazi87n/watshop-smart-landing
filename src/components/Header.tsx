@@ -25,7 +25,7 @@ const Header: React.FC = () => {
             src="/lovable-uploads/53326a96-a9a2-4e07-a12b-9e01542ad092.png" 
           />
           <h1 className="text-2xl font-bold text-ejabef-darkBlue hidden md:block">
-            {isRTL ? "إيجايف - واتس مارت" : "Ejabef - WhatsApp Smart"}
+            {isRTL ? "إيجايف - واتس مارت" : "Ejabef - Whats Mart"}
           </h1>
         </div>
         
