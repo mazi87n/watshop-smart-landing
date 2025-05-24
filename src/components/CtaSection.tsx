@@ -31,9 +31,9 @@ const CtaSection: React.FC = () => {
     
     try {
       // EmailJS configuration - Replace these with your actual EmailJS credentials
-      const serviceId = 'YOUR_SERVICE_ID';
-      const templateId = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
+      const serviceId = 'service_dc2x6fl';
+      const templateId = 'template_beblh73';
+      const publicKey = 'LgQoDUUxFjVl-C_38';
       
       // Prepare template parameters
       const templateParams = {
