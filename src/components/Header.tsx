@@ -20,12 +20,12 @@ const Header: React.FC = () => {
         {/* Logo and title - position based on language direction */}
         <div className={`flex items-center gap-3 ${isRTL ? 'order-1' : 'order-1'}`}>
           <img 
-            alt={isRTL ? "إيجايف" : "Ejabef"} 
+            alt={isRTL ? "إيجايف" : "EGAiEF"} 
             className="h-12" 
             src="/lovable-uploads/53326a96-a9a2-4e07-a12b-9e01542ad092.png" 
           />
           <h1 className="text-2xl font-bold text-ejabef-darkBlue hidden md:block">
-            {isRTL ? "إيجايف - واتس مارت" : "Ejabef - Whats Mart"}
+            {isRTL ? "إيجايف - واتس مارت" : "EGAiEF - WhatsApp Smart"}
           </h1>
         </div>
         
