@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define our languages and translation type
@@ -325,8 +326,8 @@ const translations: Translations = {
     en: 'WhatsApp: +96894496999',
   },
   'footer.copyright': {
-    ar: 'جميع الحقوق محفوظة &copy; إيجايف',
-    en: 'All rights reserved &copy; Ejabef',
+    ar: 'جميع الحقوق محفوظة © إيجايف',
+    en: 'All rights reserved © Ejabef',
   },
 
   // Language switcher
