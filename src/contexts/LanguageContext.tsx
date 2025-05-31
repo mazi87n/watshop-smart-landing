@@ -151,12 +151,8 @@ const translations: Translations = {
     en: 'Add all your products to the catalog at no cost',
   },
   'offer.feature3': {
-    ar: 'خصم 25% على الاشتراك',
-    en: '25% discount on subscription',
-  },
-  'offer.feature4': {
-    ar: 'السعر يثبت لك مدى الحياة',
-    en: 'Price is fixed for you for life',
+    ar: 'خصم 50% على الاشتراك',
+    en: '50% discount on subscription',
   },
   'offer.payOnly': {
     ar: '💸 ادفع فقط',

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Clock } from 'lucide-react';
@@ -81,10 +80,6 @@ const OfferSection: React.FC = () => {
               <div className="feature-item">
                 <span className="text-ejabef-green text-2xl">✓</span>
                 <p className="text-lg">{t('offer.feature3')}</p>
-              </div>
-              <div className="feature-item">
-                <span className="text-ejabef-green text-2xl">✓</span>
-                <p className="text-lg">{t('offer.feature4')}</p>
               </div>
             </div>
             
