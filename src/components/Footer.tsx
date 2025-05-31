@@ -1,17 +1,16 @@
-
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-
 const Footer: React.FC = () => {
-  const { t, dir } = useLanguage();
+  const {
+    t,
+    dir
+  } = useLanguage();
   const isRTL = dir() === 'rtl';
-
-  return (
-    <footer className="bg-gray-900 text-white py-10">
+  return <footer className="bg-gray-900 text-white py-10">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <img src="/logo.png" alt="إيجايف" className="h-12 mb-4" />
+            <img alt="إيجايف" src="/lovable-uploads/6acbd636-8b05-45d5-81ef-1dd4c9e1c786.png" className="h-12 mb-4 object-fill" />
             <p className={`text-gray-400 max-w-md ${isRTL ? 'rtl' : ''}`}>
               {t('footer.about')}
             </p>
@@ -45,8 +44,6 @@ const Footer: React.FC = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
