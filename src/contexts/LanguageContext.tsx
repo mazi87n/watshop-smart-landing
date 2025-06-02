@@ -160,8 +160,8 @@ const translations: Translations = {
     en: '💸 Pay only',
   },
   'offer.price': {
-    ar: '24 ر.ع',
-    en: '24 OMR',
+    ar: '10 ر.ع',
+    en: '10 OMR',
   },
   'offer.description': {
     ar: 'وخلّي الواتساب يشتغل عنك 24/7',
