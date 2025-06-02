@@ -171,8 +171,8 @@ const translations: Translations = {
     en: 'And let WhatsApp work for you 24/7',
   },
   'offer.monthlyCharge': {
-    ar: '+ 4% من المبيعات شهريًا',
-    en: '+ 4% of sales monthly',
+    ar: '+ 4% فقط من المبيعات شهريًا',
+    en: '+ 4% only of sales monthly',
   },
   'offer.cta': {
     ar: 'اطلب الخدمة الآن',
