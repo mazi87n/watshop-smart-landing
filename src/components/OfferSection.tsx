@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Clock } from 'lucide-react';
@@ -85,10 +86,18 @@ const OfferSection: React.FC = () => {
             
             <div className="flex flex-col items-center justify-center bg-gray-50 p-6 rounded-xl">
               <p className="text-xl font-bold text-ejabef-darkBlue mb-2">{t('offer.payOnly')}</p>
-              <div className="text-4xl md:text-5xl font-extrabold text-ejabef-green">
-                {t('offer.price')}
+              
+              <div className="flex items-center gap-3 mb-2">
+                <div className="text-2xl text-gray-500 line-through">
+                  {t('offer.originalPrice')}
+                </div>
+                <div className="text-4xl md:text-5xl font-extrabold text-ejabef-green">
+                  {t('offer.price')}
+                </div>
               </div>
+              
               <p className="text-lg text-gray-700 mt-2">{t('offer.description')}</p>
+              <p className="text-sm text-gray-600 mt-1 text-center">{t('offer.monthlyCharge')}</p>
               
               <Button 
                 className="cta-button mt-6 w-full justify-center animate-pulse-scale"

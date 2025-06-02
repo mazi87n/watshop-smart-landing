@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define our languages and translation type
@@ -159,6 +158,10 @@ const translations: Translations = {
     ar: '💸 ادفع فقط',
     en: '💸 Pay only',
   },
+  'offer.originalPrice': {
+    ar: '20 ر.ع',
+    en: '20 OMR',
+  },
   'offer.price': {
     ar: '10 ر.ع',
     en: '10 OMR',
@@ -166,6 +169,10 @@ const translations: Translations = {
   'offer.description': {
     ar: 'وخلّي الواتساب يشتغل عنك 24/7',
     en: 'And let WhatsApp work for you 24/7',
+  },
+  'offer.monthlyCharge': {
+    ar: '+ 4% من المبيعات شهريًا',
+    en: '+ 4% of sales monthly',
   },
   'offer.cta': {
     ar: 'اطلب الخدمة الآن',
