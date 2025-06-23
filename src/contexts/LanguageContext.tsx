@@ -55,8 +55,8 @@ const translations: Translations = {
 
   // Pain Points section
   'painpoints.title': {
-    ar: 'المشاكل التي يحلها نظام إيجايف',
-    en: 'Problems Solved by Ejabef System',
+    ar: 'المشاكل التي يحلها نظام ويـّا',
+    en: 'Problems Solved by Wiye System',
   },
   'painpoints.pain1': {
     ar: 'هل تعاني من كثرة الرسائل اليومية؟',
@@ -71,14 +71,14 @@ const translations: Translations = {
     en: 'Does your business depend on your presence?',
   },
   'painpoints.conclusion': {
-    ar: 'نظام إيجايف مصمم عشان يشيل عنك كل هذا التعب، ويخلي البزنس يمشي حتى وانت نايم.',
-    en: 'The Ejabef system is designed to take all this burden off you and keep your business running even while you sleep.',
+    ar: 'نظام ويـّا مصمم عشان يشيل عنك كل هذا التعب، ويخلي البزنس يمشي حتى وانت نايم.',
+    en: 'The Wiye system is designed to take all this burden off you and keep your business running even while you sleep.',
   },
 
   // Features section
   'features.title': {
-    ar: 'مميزات نظام إيجايف',
-    en: 'Ejabef System Features',
+    ar: 'مميزات نظام ويـّا',
+    en: 'Wiye System Features',
   },
   'features.feature1.title': {
     ar: 'نظام ذكي يرد تلقائيًا على العملاء في الواتساب',
@@ -133,8 +133,8 @@ const translations: Translations = {
     en: 'All this in one system!',
   },
   'features.description': {
-    ar: 'نظام إيجايف يجمع بين الذكاء الاصطناعي وسهولة الاستخدام، ليقدم لك تجربة بيع متكاملة على منصة الواتساب.',
-    en: 'The Ejabef system combines artificial intelligence and ease of use to provide you with an integrated selling experience on the WhatsApp platform.',
+    ar: 'نظام ويـّا يجمع بين الذكاء الاصطناعي وسهولة الاستخدام، ليقدم لك تجربة بيع متكاملة على منصة الواتساب.',
+    en: 'The Wiye system combines artificial intelligence and ease of use to provide you with an integrated selling experience on the WhatsApp platform.',
   },
 
   // Offer section
@@ -209,20 +209,20 @@ const translations: Translations = {
     en: 'Frequently Asked Questions',
   },
   'faq.q1': {
-    ar: 'كيف يعمل نظام إيجايف؟',
-    en: 'How does the Ejabef system work?',
+    ar: 'كيف يعمل نظام ويـّا؟',
+    en: 'How does the Wiye system work?',
   },
   'faq.a1': {
-    ar: 'نظام إيجايف يعمل كمساعد ذكي على منصة الواتساب، يستقبل رسائل العملاء ويرد عليها تلقائيًا ويعرض المنتجات ويتيح للعملاء الطلب والدفع مباشرة من خلال المحادثة.',
-    en: 'The Ejabef system works as a smart assistant on the WhatsApp platform, receiving customer messages, responding to them automatically, displaying products, and allowing customers to order and pay directly through the conversation.',
+    ar: 'نظام ويـّا يعمل كمساعد ذكي على منصة الواتساب، يستقبل رسائل العملاء ويرد عليها تلقائيًا ويعرض المنتجات ويتيح للعملاء الطلب والدفع مباشرة من خلال المحادثة.',
+    en: 'The Wiye system works as a smart assistant on the WhatsApp platform, receiving customer messages, responding to them automatically, displaying products, and allowing customers to order and pay directly through the conversation.',
   },
   'faq.q2': {
     ar: 'هل أحتاج إلى مهارات تقنية لاستخدام النظام؟',
     en: 'Do I need technical skills to use the system?',
   },
   'faq.a2': {
-    ar: 'لا، نظام إيجايف مصمم ليكون سهل الاستخدام وبديهي. نحن نقوم بكل الإعداد التقني لك، وكل ما تحتاجه هو القدرة على استخدام لوحة تحكم بسيطة لإضافة المنتجات ومتابعة الطلبات.',
-    en: 'No, the Ejabef system is designed to be user-friendly and intuitive. We handle all the technical setup for you, and all you need is the ability to use a simple dashboard to add products and track orders.',
+    ar: 'لا، نظام ويـّا مصمم ليكون سهل الاستخدام وبديهي. نحن نقوم بكل الإعداد التقني لك، وكل ما تحتاجه هو القدرة على استخدام لوحة تحكم بسيطة لإضافة المنتجات ومتابعة الطلبات.',
+    en: 'No, the Wiye system is designed to be user-friendly and intuitive. We handle all the technical setup for you, and all you need is the ability to use a simple dashboard to add products and track orders.',
   },
   'faq.q3': {
     ar: 'كم من الوقت يستغرق تفعيل النظام؟',
@@ -237,8 +237,8 @@ const translations: Translations = {
     en: 'Can the system be integrated with my payment system?',
   },
   'faq.a4': {
-    ar: 'نعم، يمكن ربط نظام إيجايف بمعظم بوابات الدفع الشائعة في المنطقة مثل Thawani، PayTabs، وغيرها.',
-    en: 'Yes, the Ejabef system can be linked to most popular payment gateways in the region such as Thawani, PayTabs, and others.',
+    ar: 'نعم، يمكن ربط نظام ويـّا بمعظم بوابات الدفع الشائعة في المنطقة مثل Thawani، PayTabs، وغيرها.',
+    en: 'Yes, the Wiye system can be linked to most popular payment gateways in the region such as Thawani, PayTabs, and others.',
   },
   'faq.q5': {
     ar: 'هل يمكنني تخصيص الردود والرسائل؟',
@@ -309,8 +309,8 @@ const translations: Translations = {
 
   // Footer section
   'footer.about': {
-    ar: 'إيجايف - نظام ذكي للبيع عبر الواتساب، يساعد أصحاب المشاريع الصغيرة والمتوسطة على توفير الوقت وزيادة المبيعات.',
-    en: 'Ejabef - A smart system for selling through WhatsApp, helping small and medium business owners save time and increase sales.',
+    ar: 'ويـّا - نظام ذكي للبيع عبر الواتساب، يساعد أصحاب المشاريع الصغيرة والمتوسطة على توفير الوقت وزيادة المبيعات.',
+    en: 'Wiye - A smart system for selling through WhatsApp, helping small and medium business owners save time and increase sales.',
   },
   'footer.quickLinks': {
     ar: 'روابط سريعة',
@@ -333,8 +333,8 @@ const translations: Translations = {
     en: 'WhatsApp: +96894496999',
   },
   'footer.copyright': {
-    ar: 'جميع الحقوق محفوظة © إيجايف',
-    en: 'All rights reserved © Ejabef',
+    ar: 'جميع الحقوق محفوظة © ويـّا',
+    en: 'All rights reserved © Wiye',
   },
 
   // Language switcher

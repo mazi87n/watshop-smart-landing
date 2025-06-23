@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe } from 'lucide-react';
+
 const Header: React.FC = () => {
   const {
     t,
@@ -10,17 +12,20 @@ const Header: React.FC = () => {
     setLanguage,
     dir
   } = useLanguage();
+  
   const toggleLanguage = () => {
     setLanguage(language === 'ar' ? 'en' : 'ar');
   };
+  
   const isRTL = dir() === 'rtl';
+  
   return <header className="py-4 w-full">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo and title - position based on language direction */}
         <div className={`flex items-center gap-3 ${isRTL ? 'order-1' : 'order-1'}`}>
-          <img alt={isRTL ? "إيجايف" : "EGAiEF"} className="h-12" src="/lovable-uploads/c33812eb-63c6-4bbe-9c2d-8355e178a82c.jpg" />
+          <img alt={isRTL ? "ويـّا" : "Wiye"} className="h-12" src="/lovable-uploads/c33812eb-63c6-4bbe-9c2d-8355e178a82c.jpg" />
           <h1 className="text-2xl font-bold text-ejabef-darkBlue hidden md:block">
-            {isRTL ? "إيجايف - واتس مارت" : "EGAiEF - Whats Mart"}
+            {isRTL ? "ويـّا - واتس مارت" : "Wiye - Whats Mart"}
           </h1>
         </div>
         
@@ -56,4 +61,5 @@ const Header: React.FC = () => {
       </div>
     </header>;
 };
+
 export default Header;
