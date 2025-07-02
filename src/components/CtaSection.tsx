@@ -169,7 +169,7 @@ This message was sent from the Wiye website contact form.`,
             <div className="form-group">
               <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('cta.addOns')}</h3>
               <div className="space-y-3">
-                <div className="flex items-center space-x-3">
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
                   <Checkbox
                     id="aiTools"
                     checked={addOns.aiTools}
@@ -181,7 +181,7 @@ This message was sent from the Wiye website contact form.`,
                   </label>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
                   <Checkbox
                     id="deepAnalysis"
                     checked={addOns.deepAnalysis}
@@ -193,7 +193,7 @@ This message was sent from the Wiye website contact form.`,
                   </label>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
                   <Checkbox
                     id="storeWebsite"
                     checked={addOns.storeWebsite}
@@ -205,7 +205,7 @@ This message was sent from the Wiye website contact form.`,
                   </label>
                 </div>
                 
-                <div className="flex items-center space-x-3">
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
                   <Checkbox
                     id="mobileApp"
                     checked={addOns.mobileApp}
