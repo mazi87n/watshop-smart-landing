@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <img alt="إيجايف" className="h-12 mb-4 object-fill" src="/lovable-uploads/b0378437-bc48-4696-8c44-f988dff2ab87.png" />
+            <img alt="إيجايف" className="h-12 mb-4 object-fill" src="/lovable-uploads/d09a2c45-5c2c-43db-912a-5bc687de41fb.png" />
             <p className={`text-gray-400 max-w-md ${isRTL ? 'rtl' : ''}`}>
               {t('footer.about')}
             </p>
