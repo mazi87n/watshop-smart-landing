@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Loader2 } from 'lucide-react';
@@ -18,11 +19,31 @@ const CtaSection: React.FC = () => {
     businessName: ''
   });
 
+  const [addOns, setAddOns] = useState({
+    aiTools: false,
+    deepAnalysis: false,
+    storeWebsite: false,
+    mobileApp: false
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleAddOnChange = (addOnKey: keyof typeof addOns, checked: boolean) => {
+    setAddOns(prev => ({ ...prev, [addOnKey]: checked }));
+  };
+
+  const calculateTotal = () => {
+    let total = 10; // Base price
+    if (addOns.aiTools) total += 10;
+    if (addOns.deepAnalysis) total += 7;
+    if (addOns.storeWebsite) total += 10;
+    if (addOns.mobileApp) total += 25;
+    return total;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,8 +67,16 @@ const CtaSection: React.FC = () => {
 Name: ${formData.name}
 Phone: ${formData.phone}
 Business: ${formData.businessName}
+
+Selected Add-ons:
+${addOns.aiTools ? '- AI Tools (+10 OMR)' : ''}
+${addOns.deepAnalysis ? '- Deep Analysis (+7 OMR)' : ''}
+${addOns.storeWebsite ? '- Store Website (+10 OMR)' : ''}
+${addOns.mobileApp ? '- Mobile App (+25 OMR)' : ''}
+
+Total Price: ${calculateTotal()} OMR
         
-This message was sent from the Ejabef website contact form.`,
+This message was sent from the Wiye website contact form.`,
       };
 
       // Send email using EmailJS
@@ -137,6 +166,65 @@ This message was sent from the Ejabef website contact form.`,
               />
             </div>
             
+            <div className="form-group">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('cta.addOns')}</h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <Checkbox
+                    id="aiTools"
+                    checked={addOns.aiTools}
+                    onCheckedChange={(checked) => handleAddOnChange('aiTools', checked as boolean)}
+                    disabled={isSubmitting}
+                  />
+                  <label htmlFor="aiTools" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    {t('cta.aiTools')} - 10 {t('currency')}
+                  </label>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <Checkbox
+                    id="deepAnalysis"
+                    checked={addOns.deepAnalysis}
+                    onCheckedChange={(checked) => handleAddOnChange('deepAnalysis', checked as boolean)}
+                    disabled={isSubmitting}
+                  />
+                  <label htmlFor="deepAnalysis" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    {t('cta.deepAnalysis')} - 7 {t('currency')}
+                  </label>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <Checkbox
+                    id="storeWebsite"
+                    checked={addOns.storeWebsite}
+                    onCheckedChange={(checked) => handleAddOnChange('storeWebsite', checked as boolean)}
+                    disabled={isSubmitting}
+                  />
+                  <label htmlFor="storeWebsite" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    {t('cta.storeWebsite')} - 10 {t('currency')}
+                  </label>
+                </div>
+                
+                <div className="flex items-center space-x-3">
+                  <Checkbox
+                    id="mobileApp"
+                    checked={addOns.mobileApp}
+                    onCheckedChange={(checked) => handleAddOnChange('mobileApp', checked as boolean)}
+                    disabled={isSubmitting}
+                  />
+                  <label htmlFor="mobileApp" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    {t('cta.mobileApp')} - 25 {t('currency')}
+                  </label>
+                </div>
+              </div>
+              
+              <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                <p className="text-sm text-gray-600">
+                  {t('cta.total')}: {calculateTotal()} {t('currency')}
+                </p>
+              </div>
+            </div>
+            
             <Button 
               type="submit" 
               className="cta-button w-full justify-center" 
@@ -148,7 +236,7 @@ This message was sent from the Ejabef website contact form.`,
                   {t('cta.sending')}
                 </>
               ) : (
-                t('cta.button')
+                `${t('cta.button')} - ${calculateTotal()} ${t('currency')}`
               )}
             </Button>
           </form>

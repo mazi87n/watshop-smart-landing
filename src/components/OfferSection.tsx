@@ -82,6 +82,16 @@ const OfferSection: React.FC = () => {
                 <span className="text-ejabef-green text-2xl">✓</span>
                 <p className="text-lg">{t('offer.feature3')}</p>
               </div>
+              
+              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <h4 className="font-semibold text-yellow-800 mb-2">{t('offer.addOnsTitle')}</h4>
+                <ul className="text-sm text-yellow-700 space-y-1">
+                  <li>• {t('offer.addOnAI')} - 10 {t('currency')}</li>
+                  <li>• {t('offer.addOnAnalysis')} - 7 {t('currency')}</li>
+                  <li>• {t('offer.addOnWebsite')} - 10 {t('currency')}</li>
+                  <li>• {t('offer.addOnMobile')} - 25 {t('currency')}</li>
+                </ul>
+              </div>
             </div>
             
             <div className="flex flex-col items-center justify-center bg-gray-50 p-6 rounded-xl">

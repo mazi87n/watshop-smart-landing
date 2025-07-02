@@ -202,6 +202,32 @@ const translations: Translations = {
     ar: 'ثانية',
     en: 'sec',
   },
+  'offer.addOnsTitle': {
+    ar: 'إضافات متاحة:',
+    en: 'Available Add-ons:',
+  },
+  'offer.addOnAI': {
+    ar: 'أدوات الذكاء الاصطناعي',
+    en: 'AI Tools Integration',
+  },
+  'offer.addOnAnalysis': {
+    ar: 'تحليل عميق وتقارير',
+    en: 'Deep Analysis & Reports',
+  },
+  'offer.addOnWebsite': {
+    ar: 'موقع متجر إلكتروني',
+    en: 'E-commerce Website',
+  },
+  'offer.addOnMobile': {
+    ar: 'تطبيق جوال',
+    en: 'Mobile Application',
+  },
+
+  // Currency
+  'currency': {
+    ar: 'ر.ع',
+    en: 'OMR',
+  },
 
   // FAQ section
   'faq.title': {
@@ -290,9 +316,33 @@ const translations: Translations = {
     ar: 'أدخل اسم مشروعك التجاري',
     en: 'Enter your business name',
   },
+  'cta.addOns': {
+    ar: 'إضافات اختيارية',
+    en: 'Optional Add-ons',
+  },
+  'cta.aiTools': {
+    ar: 'أدوات الذكاء الاصطناعي',
+    en: 'AI Tools Integration',
+  },
+  'cta.deepAnalysis': {
+    ar: 'تحليل عميق وتقارير',
+    en: 'Deep Analysis & Reports',
+  },
+  'cta.storeWebsite': {
+    ar: 'موقع متجر إلكتروني',
+    en: 'E-commerce Website',
+  },
+  'cta.mobileApp': {
+    ar: 'تطبيق جوال',
+    en: 'Mobile Application',
+  },
+  'cta.total': {
+    ar: 'السعر الإجمالي',
+    en: 'Total Price',
+  },
   'cta.button': {
-    ar: 'اطلب الخدمة الآن واحصل على العرض الخاص',
-    en: 'Request Service Now and Get the Special Offer',
+    ar: 'اطلب الخدمة الآن',
+    en: 'Request Service Now',
   },
   'cta.disclaimer': {
     ar: 'بالضغط على زر الطلب، أنت توافق على سياسة الخصوصية وشروط الاستخدام الخاصة بنا.',
