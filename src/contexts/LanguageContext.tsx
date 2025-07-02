@@ -163,8 +163,8 @@ const translations: Translations = {
     en: '20 OMR',
   },
   'offer.price': {
-    ar: '10 ر.ع',
-    en: '10 OMR',
+    ar: '10 ر.ع/شهرياً',
+    en: '10 OMR/month',
   },
   'offer.description': {
     ar: 'وخلّي الواتساب يشتغل عنك 24/7',
