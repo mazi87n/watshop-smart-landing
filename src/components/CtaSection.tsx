@@ -169,7 +169,7 @@ This message was sent from the Wiye website contact form.`,
             <div className="form-group">
               <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('cta.addOns')}</h3>
               <div className="space-y-3">
-                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
                   <Checkbox
                     id="aiTools"
                     checked={addOns.aiTools}
@@ -181,7 +181,7 @@ This message was sent from the Wiye website contact form.`,
                   </label>
                 </div>
                 
-                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
                   <Checkbox
                     id="deepAnalysis"
                     checked={addOns.deepAnalysis}
@@ -193,7 +193,7 @@ This message was sent from the Wiye website contact form.`,
                   </label>
                 </div>
                 
-                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
                   <Checkbox
                     id="storeWebsite"
                     checked={addOns.storeWebsite}
@@ -205,7 +205,7 @@ This message was sent from the Wiye website contact form.`,
                   </label>
                 </div>
                 
-                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
                   <Checkbox
                     id="mobileApp"
                     checked={addOns.mobileApp}
@@ -236,7 +236,7 @@ This message was sent from the Wiye website contact form.`,
                   {t('cta.sending')}
                 </>
               ) : (
-                `${t('cta.button')} - ${calculateTotal()} ${t('currency')}`
+                `${t('cta.button')} - ${calculateTotal()} ${t('currency')}/month`
               )}
             </Button>
           </form>
