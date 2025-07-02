@@ -228,6 +228,10 @@ const translations: Translations = {
     ar: 'ر.ع',
     en: 'OMR',
   },
+  'monthly': {
+    ar: 'شهرياً',
+    en: 'monthly',
+  },
 
   // FAQ section
   'faq.title': {

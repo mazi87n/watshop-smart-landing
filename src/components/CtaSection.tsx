@@ -236,7 +236,7 @@ This message was sent from the Wiye website contact form.`,
                   {t('cta.sending')}
                 </>
               ) : (
-                `${t('cta.button')} - ${calculateTotal()} ${t('currency')}/month`
+                `${t('cta.button')} - ${calculateTotal()} ${t('currency')} ${t('monthly')}`
               )}
             </Button>
           </form>
