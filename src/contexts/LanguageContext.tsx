@@ -312,6 +312,14 @@ const translations: Translations = {
     ar: 'أدخل رقم الهاتف المستخدم على الواتساب',
     en: 'Enter the phone number used on WhatsApp',
   },
+  'cta.email': {
+    ar: 'البريد الإلكتروني',
+    en: 'Email Address',
+  },
+  'cta.emailPlaceholder': {
+    ar: 'أدخل بريدك الإلكتروني',
+    en: 'Enter your email address',
+  },
   'cta.business': {
     ar: 'اسم المشروع/النشاط التجاري',
     en: 'Business/Project Name',
@@ -359,6 +367,18 @@ const translations: Translations = {
   'cta.successDesc': {
     ar: 'سنتواصل معك قريباً لإتمام الطلب.',
     en: 'We will contact you soon to complete the request.',
+  },
+  'cta.error': {
+    ar: 'حدث خطأ',
+    en: 'Error',
+  },
+  'cta.errorDesc': {
+    ar: 'حدثت مشكلة في إرسال طلبك. يرجى المحاولة مرة أخرى.',
+    en: 'There was a problem submitting your request. Please try again.',
+  },
+  'cta.sending': {
+    ar: 'جارٍ الإرسال...',
+    en: 'Sending...',
   },
 
   // Footer section

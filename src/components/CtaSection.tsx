@@ -16,6 +16,7 @@ const CtaSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     businessName: ''
   });
 
@@ -66,6 +67,7 @@ const CtaSection: React.FC = () => {
         
 Name: ${formData.name}
 Phone: ${formData.phone}
+Email: ${formData.email}
 Business: ${formData.businessName}
 
 Selected Add-ons:
@@ -95,6 +97,7 @@ This message was sent from the Wiye website contact form.`,
       setFormData({
         name: '',
         phone: '',
+        email: '',
         businessName: ''
       });
     } catch (error) {
@@ -146,6 +149,22 @@ This message was sent from the Wiye website contact form.`,
                 required
                 className={isRTL ? 'rtl' : ''}
                 placeholder={t('cta.phonePlaceholder')}
+                dir={dir()}
+                disabled={isSubmitting}
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="email" className="block text-gray-700 mb-2">{t('cta.email')}</label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className={isRTL ? 'rtl' : ''}
+                placeholder={t('cta.emailPlaceholder')}
                 dir={dir()}
                 disabled={isSubmitting}
               />
