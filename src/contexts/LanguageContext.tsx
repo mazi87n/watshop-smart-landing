@@ -139,8 +139,8 @@ const translations: Translations = {
 
   // Offer section
   'offer.title': {
-    ar: '🎁 عرض خاص لأول 20 مشروع فقط',
-    en: '🎁 Special offer for the first 20 projects only',
+    ar: 'عرض خاص لأول 20 مشروع',
+    en: 'Special offer for the first 20 projects',
   },
   'offer.feature1': {
     ar: 'تهيئة النظام بالكامل مجانًا',
