@@ -179,8 +179,8 @@ const translations: Translations = {
     en: 'Request Service Now',
   },
   'offer.warning': {
-    ar: '🚨 لا تفوّت الفرصة – العرض حصري لأول 20 مشروع فقط!',
-    en: '🚨 Don\'t miss the opportunity – the offer is exclusive to the first 20 projects only!',
+    ar: '🚨 لا تفوّت الفرصة – العرض حصري لأول 20 مشروع!',
+    en: '🚨 Don\'t miss the opportunity – the offer is exclusive to the first 20 projects!',
   },
   'offer.countdown': {
     ar: 'العرض ينتهي خلال:',
