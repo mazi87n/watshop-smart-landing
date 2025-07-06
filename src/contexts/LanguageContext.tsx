@@ -33,7 +33,7 @@ const translations: Translations = {
   
   // Hero translations
   'hero.title': {
-    ar: 'خلك ذكي.. وخلي الواتساب يبيع عنك!',
+    ar: 'كُن ضمن أكثر من 150 مشروع يحقق مبيعات متزايدة شهريًا… من خلال الواتساب فقط',
     en: 'Be smart.. Let WhatsApp sell for you!',
   },
   'hero.subtitle': {
