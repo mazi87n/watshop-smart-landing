@@ -34,7 +34,7 @@ const translations: Translations = {
   // Hero translations
   'hero.title': {
     ar: 'كُن ضمن أكثر من 150 مشروع يحقق مبيعات متزايدة شهريًا… من خلال الواتساب فقط',
-    en: 'Be smart.. Let WhatsApp sell for you!',
+    en: 'Be among more than 150 projects achieving increasing monthly sales... through WhatsApp only',
   },
   'hero.subtitle': {
     ar: 'حوّل محادثاتك إلى مبيعات تلقائية على مدار الساعة – عبر نظام ذكي يرد ويبيع بدون تدخل منك.',
