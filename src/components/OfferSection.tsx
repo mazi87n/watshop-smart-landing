@@ -8,10 +8,10 @@ const OfferSection: React.FC = () => {
   const { t, dir } = useLanguage();
   const isRTL = dir() === 'rtl';
   
-  // Set countdown for 3 days from now
+  // Set countdown for 24 hours from now
   const [timeLeft, setTimeLeft] = useState({
-    days: 3,
-    hours: 0,
+    days: 0,
+    hours: 24,
     minutes: 0,
     seconds: 0
   });
